@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualization of viewing transforms and associated coordinate systems</title>
+  </head>
+  <body>
+    [Left window] View by a remote external observer; [Right window] View from location of the camera</br>
+    <canvas id="observerCanvas" width="400" height="400" style="border:1px solid #888;"></canvas>
+    <canvas id="cameraCanvas" width="400" height="400" style="border:1px solid #888;"></canvas>
+    </br>
+    <input id="slider1" type="range" min="0" max="200" /> Move object along curve
+    </br>
+    <input id="slider2" type="range" min="0" max="100" /> Move camera around scene
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="demo.js" id="module"></script>
+  </body>
+</html>
