@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebGL cube drawn with indexed vertex list</title>
+  </head>
+
+  <body>
+    <script id="vertexShader" type="not-js">
+      attribute vec3 vPosition;
+      attribute vec3 vColor;
+      varying vec3 fColor;
+      uniform mat4 uMVP;
+
+      void main(void) {
+        gl_Position = uMVP * vec4(vPosition, 1.0);
+	    fColor = vColor;
+      }
+    </script>
+
+    <script id="fragmentShader" type="not-js">
+      precision highp float;
+      varying vec3 fColor;
+
+      void main(void) {
+	     gl_FragColor = vec4(fColor, 1.0);
+      }
+    </script>
+
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+    <br>
+    <input id="slider1" type="range" min="-100" max="100" />
+    <input id="slider2" type="range" min="-100" max="100" />
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="demo.js" id="module"></script>
+  </body>
+</html>
